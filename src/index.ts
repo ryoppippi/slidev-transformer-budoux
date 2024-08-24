@@ -52,6 +52,10 @@ export function budouxCodeblock(
 	defaultLanguage: Language = 'ja',
 ): (ctx: MarkdownTransformContext) => void {
 	return (ctx: MarkdownTransformContext) => {
+		if (!ctx.s.toString().includes('budoux')) {
+			return;
+		}
+
 		/* Replace the content of the budoux tags */
 		languages.forEach((lang) => {
 			const parser = getParser(lang);
