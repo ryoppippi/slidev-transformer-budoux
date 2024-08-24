@@ -1,0 +1,38 @@
+{
+	"name": "slidev-transformer-budoux",
+	"type": "module",
+	"version": "0.0.0",
+	"packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276",
+	"author": "ryoppippi",
+	"license": "MIT",
+	"exports": "./src/index.ts",
+	"files": [
+		"src"
+	],
+	"scripts": {
+		"build": "slidev build",
+		"dev": "slidev --open",
+		"export": "slidev export",
+		"lint": "eslint --cache .",
+		"format": "nr lint --fix",
+		"typecheck": "tsc --noEmit",
+		"release": "nlx bumpp --ignore-scripts",
+		"publish:jsr": "nlx pkg-to-jsr && nlx jsr publish --allow-dirty"
+	},
+	"dependencies": {
+		"@slidev/types": "^0.49.27",
+		"budoux": "^0.6.2",
+		"vue": "^3.4.38"
+	},
+	"devDependencies": {
+		"@antfu/ni": "^0.22.4",
+		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
+		"@slidev/cli": "^0.49.27",
+		"@slidev/theme-default": "latest",
+		"@slidev/theme-seriph": "latest",
+		"eslint": "^9.9.1",
+		"eslint-plugin-format": "^0.1.2",
+		"eslint-plugin-svelte": "^2.43.0",
+		"prettier-plugin-slidev": "^1.0.5"
+	}
+}
