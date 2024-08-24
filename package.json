@@ -11,7 +11,7 @@
 	},
 	"files": [
 		"LICENSE",
-		"REAMDE.md",
+		"README.md",
 		"package.json",
 		"src"
 	],
