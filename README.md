@@ -52,6 +52,8 @@ In your Slidev markdown files, use the `<budoux>` tag or language-specific tags:
 <budoux-th>สวัสดีโลก！</budoux-th>
 ```
 
+See actual processing results from [slides.md](./slides.md) in [GH pages](https://ryoppippi.github.io/slidev-transformer-budoux).
+
 ## API
 
 ### `budouxCodeblock(defaultLanguage?: Language)`
