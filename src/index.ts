@@ -1,5 +1,4 @@
 import type { MarkdownTransformContext } from '@slidev/types';
-import type { MagicString } from 'vue/compiler-sfc';
 
 import { type Language, getParser } from './get-budoux.js';
 
