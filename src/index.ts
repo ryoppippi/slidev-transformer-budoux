@@ -1,22 +1,12 @@
 import type { MarkdownTransformContext } from '@slidev/types';
 import type { MagicString } from 'vue/compiler-sfc';
 
-import { type Language, getParser, languages } from './get-budoux.js';
-
-function replaceTagContent(
-	ms: MagicString,
-	tagName: string,
-	processFunc: (content: string) => string,
-): MagicString {
-	const regex = new RegExp(`<${tagName}>(.*?)<\/${tagName}>`, 'g');
-	ms.replaceAll(regex, (_, content: string) => processFunc(content));
-	return ms;
-}
+import { type Language, getParser } from './get-budoux.js';
 
 /**
  * Budoux codeblock transformer
  *
- * add a `budoux` tag to your markdown to enable Budoux translation
+ * Add a `budoux` tag to your markdown to enable Budoux translation
  *
  * # Setup
  *
@@ -25,7 +15,6 @@ function replaceTagContent(
  * import { budouxCodeblock } from '@ryoppippi/slidev-transformer-budoux'
  * import { defineTransformersSetup } from '@slidev/types'
  *
- * export default defineTransformersSetup(() => {
  * export default defineTransformersSetup(() => {
  *  return {
  *    pre: [],
@@ -56,25 +45,14 @@ export function budouxCodeblock(
 			return;
 		}
 
-		/* Replace the content of the budoux tags */
-		languages.forEach((lang) => {
-			const parser = getParser(lang);
-			replaceTagContent(
-				ctx.s,
-				`budoux-${lang}`,
-				(content) => {
-					return parser.translateHTMLString(content);
-				},
-			);
-		});
+		/* Regex to match <budoux> or <budoux-lang> */
+		const tagNameRegex = /<budoux(?:-([a-z]{2}))?>(.*?)<\/budoux(?:-[a-z]{2})?>/g;
 
-		/* Replace the content of the default budoux tags */
-		replaceTagContent(
-			ctx.s,
-			'budoux',
-			(content) => {
-				return getParser(defaultLanguage).translateHTMLString(content);
-			},
-		);
+		/* Replace the content of the budoux tags */
+		ctx.s.replaceAll(tagNameRegex, (_, lang: Language | undefined, content: string) => {
+			const language = lang ?? defaultLanguage;
+			const parser = getParser(language);
+			return parser.translateHTMLString(content);
+		});
 	};
 }
