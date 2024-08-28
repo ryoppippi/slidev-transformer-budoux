@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@slidev/types':
-        specifier: ^0.49.27
+        specifier: ^0.49.28
         version: 0.49.28(@nuxt/kit@3.13.0(rollup@4.21.0))(@vue/compiler-sfc@3.4.38)(postcss@8.4.41)(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@18.19.45))
       budoux:
         specifier: ^0.6.2
