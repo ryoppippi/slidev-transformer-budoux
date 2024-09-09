@@ -34,7 +34,7 @@ importers:
         specifier: latest
         version: 0.25.0
       eslint:
-        specifier: ^9.9.1
+        specifier: ^9.10.0
         version: 9.10.0(jiti@1.21.6)
       eslint-plugin-format:
         specifier: ^0.1.2
