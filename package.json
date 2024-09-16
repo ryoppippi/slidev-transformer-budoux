@@ -38,7 +38,7 @@
 		"@slidev/theme-seriph": "latest",
 		"eslint": "^9.10.0",
 		"eslint-plugin-format": "^0.1.2",
-		"eslint-plugin-svelte": "^2.43.0",
+		"eslint-plugin-svelte": "^2.44.0",
 		"prettier-plugin-slidev": "^1.0.5"
 	}
 }
