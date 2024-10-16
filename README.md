@@ -5,6 +5,17 @@
 
 A Slidev transformer that integrates BudouX for improved text wrapping in Japanese, Simplified Chinese, Traditional Chinese, and Thai languages.
 
+> [!CAUTION]
+> Maybe you don't need this transformer. Just add the following snippet to `index.html`
+>
+> ```
+> <head>
+>     <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+> </head>
+> ```
+>
+> More info at [BudouX](https://github.com/google/budoux/blob/main/javascript/README.md)
+
 ## Features
 
 - Supports automatic line breaking for:
